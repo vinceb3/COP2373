@@ -37,18 +37,28 @@ def sell_loop(total_tickets, max_per_buyer):
 # tickets left.
 def user_tickets(tickets_available, max_per_buyer):
 
-    # Tells the user how many tickets are available and how many they can buy.
+    # Tells the user how many tickets are available and how many they
+    # can buy.
     print(f"{tickets_available} tickets available, max {max_per_buyer} per "
           f"buyer.")
 
-    # Gets the number of tickets desired from the user.
-    tickets_desired = int(input(f"How many tickets do you want to buy? "))
-
+    # This while True block will break once no ValueError input occurs.
+    while True:
+        # This try-except block tests the user input for values that
+        # will cause the int() function to error out, like decimals
+        # and words.
+        try:
+            # Gets the number of tickets desired from the user.
+            tickets_desired = int(input(f"How many tickets do you want to buy? "
+                                        f"Enter an integer: "))
+            break
+        except ValueError:
+            print("ERROR: Only integers (e.g. 3, 11) are accepted. Please try again.")
     # Tests the user's value for validity. It cannot be greater than
     # the number of tickets available or maximum tickets per buyer.
     while ((tickets_desired > max_per_buyer) or
           (tickets_desired > tickets_available)):
-        tickets_desired = int(input(f"Please enter a valid number: "))
+        tickets_desired = int(input(f"Please enter a valid integer: "))
     return tickets_desired
 
 def main():
