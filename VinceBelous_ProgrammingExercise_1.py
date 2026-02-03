@@ -12,18 +12,18 @@ def sell_loop(total_tickets, max_per_buyer):
 
     # Initializes variables
     tickets_sold = 0
-    tickets_available = total_tickets
+    tickets_left = total_tickets
     customers = 0
 
     # While not all of the tickets are sold yet, sell tickets.
     while tickets_sold < total_tickets:
         # Calls the user_tickets() function, which returns the number
         # of desired tickets to the tickets_user_bought variable.
-        tickets_user_bought = user_tickets(tickets_available, max_per_buyer)
+        tickets_user_bought = user_tickets(tickets_left, max_per_buyer)
 
         # Accumulator changes
         tickets_sold += tickets_user_bought
-        tickets_available -= tickets_user_bought
+        tickets_left -= tickets_user_bought
         customers += 1
 
     # Tells the user how many tickets and customers there were.
