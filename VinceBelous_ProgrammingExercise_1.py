@@ -49,8 +49,8 @@ def user_tickets(tickets_available, max_per_buyer):
         # and words.
         try:
             # Gets the number of tickets desired from the user.
-            tickets_desired = int(input(f"How many tickets do you want to buy? "
-                                        f"Enter an integer: "))
+            tickets_desired = int(input(f"Enter an integer number for how many"
+                                        f" tickets you would like to purchase: "))
             break
         except ValueError:
             print("ERROR: Only integers (e.g. 3, 11) are accepted. Please try again.")
