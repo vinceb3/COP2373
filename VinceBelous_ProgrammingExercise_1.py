@@ -1,7 +1,7 @@
 # Establish global constants. These values will be manipulated by
 # functions, but the values of these variables themselves will stay
 # the same.
-TOTAL_TICKETS = 20
+TOTAL_TICKETS = 10
 MAX_PER_BUYER = 4
 
 # The sell_loop() function contains the core of the program, a while
