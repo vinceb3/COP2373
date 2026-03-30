@@ -1,10 +1,16 @@
 import csv
 
 def main():
-    # Very simple progression from writing to reading, but can be quit
-    # from the write_grades() function by typing a non-digit
-    write_grades()
-    read_grades()
+    # Simple menu letting the teacher read the file without erasing it
+    while True:
+        choice = input("Type 'w' to write to grades.csv, 'r' to read from grades.csv, "
+                   "or anything else to quit: ")
+        if choice.casefold() == "w":
+            write_grades()
+        elif choice.casefold() == "r":
+            read_grades()
+        else:
+            break
 
 # The write_grades() function writes values to grades.csv.
 def write_grades():
